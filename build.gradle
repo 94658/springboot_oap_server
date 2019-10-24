@@ -15,7 +15,7 @@ repositories {
 task genJaxb {
     ext.sourcesDir = "${buildDir}/generated-sources/jaxb"
     ext.classesDir = "${buildDir}/classes/jaxb"
-    ext.schema = "src/main/resources/countries.xsd" //NAME OF YOUR XSD FILE
+    ext.schema = "src/main/resources/universities.xsd" //NAME OF YOUR XSD FILE
 
     outputs.dir classesDir
 
@@ -68,6 +68,9 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+//    implementation 'javax.xml.bind:jaxb-api:2.3.0'
+//    implementation 'javax.activation:activation:1.1'
+//    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.0'
 }
 
 test {
