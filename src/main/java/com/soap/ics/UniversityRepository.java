@@ -1,15 +1,19 @@
 package com.soap.ics;
 
-import localhost._7000.soap_server.University;
+import localhost._7000.universities.University;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class UniversityRepository {
 
     private static final Map<String, University> universities = new HashMap<>();
 
-
+    @PostConstruct
     private void loadData() {
         // initialize countries map
         University strath = new University();

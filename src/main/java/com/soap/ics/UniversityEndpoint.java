@@ -2,8 +2,8 @@ package com.soap.ics;
 
 //import localhost._7000.soap_server.GetCountryRequest;
 //import localhost._7000.soap_server.GetCountryResponse;
-import localhost._7000.soap_server.GetUniversityRequest;
-import localhost._7000.soap_server.GetUniversityResponse;
+import localhost._7000.universities.GetUniversityRequest;
+import localhost._7000.universities.GetUniversityResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -13,7 +13,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 @SuppressWarnings("ALL")
 @Endpoint
 public class UniversityEndpoint {
-    private static final String NAMESPACE_URI = "http://localhost:7000/soap-server";
+    private static final String NAMESPACE_URI = "http://localhost:7000/universities";
 //
 //
     private UniversityRepository universityRepository;
