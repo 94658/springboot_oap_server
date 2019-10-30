@@ -3,6 +3,7 @@ package com.soap.ics;
 import localhost._7000.universities.University;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -11,7 +12,7 @@ import java.util.Map;
 @Component
 public class UniversityRepository {
 
-    private static final Map<String, University> universities = new HashMap<>();
+    private static final Map<String, University> universities = new HashMap<>(); //to hold data
 
     @PostConstruct
     private void loadData() {
@@ -37,6 +38,7 @@ public class UniversityRepository {
     }
 
     public University getUniversityByName(String name){
+        Assert.notNull(name, "The University's name must not be null");
         return universities.get(name);
     }
 }

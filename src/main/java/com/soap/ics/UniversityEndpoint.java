@@ -26,7 +26,7 @@ public class UniversityEndpoint {
 //
 //
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getUniversityRequest") //custom change for your project
-    @ResponsePayload
+    @ResponsePayload //map the returned value to the response payload.
     public GetUniversityResponse getUniversity(@RequestPayload GetUniversityRequest request) {
         GetUniversityResponse response = new GetUniversityResponse();
         response.setUniversity(universityRepository.getUniversityByName(request.getName()));
