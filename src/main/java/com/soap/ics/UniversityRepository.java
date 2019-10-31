@@ -6,7 +6,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Component
@@ -16,29 +18,31 @@ public class UniversityRepository {
 
     @PostConstruct
     private void loadData() {
-        // initialize countries map
         University strath = new University();
+        strath.setLocation("Ole Sangale");
         strath.setName("Strathmore");
-        strath.setLocation("Madaraka");
         strath.setYearFounded(1960);
-        universities.put(strath.getName(),strath);
+        universities.put(strath.getName(), strath);
 
         University jkuat = new University();
-        jkuat.setName("JKUAT");
         jkuat.setLocation("Juja");
-        jkuat.setYearFounded(1980);
-        universities.put(jkuat.getName(),jkuat);
+        jkuat.setName("JKUAT");
+        jkuat.setYearFounded(1990);
+        universities.put(jkuat.getName(), jkuat);
 
-        University ku = new University();
-        ku.setName("Kenyatta University");
-        ku.setLocation("Ruiru");
-        ku.setYearFounded(1980);
-        universities.put(ku.getName(),ku);
-
+        University riara = new University();
+        riara.setLocation("Mbagathi");
+        riara.setName("Riara");
+        riara.setYearFounded(2003);
+        universities.put(riara.getName(), riara);
     }
 
-    public University getUniversityByName(String name){
-        Assert.notNull(name, "The University's name must not be null");
+    public University getUniversityByName(String name) {
         return universities.get(name);
+    }
+
+
+    public List<University> getAllUniversities(){
+        return new ArrayList<>(universities.values());
     }
 }

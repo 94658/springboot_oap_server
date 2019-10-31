@@ -19,14 +19,14 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     //generates ws file  for transfer of messages btn services
     @Bean
     public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
-        MessageDispatcherServlet servlet = new MessageDispatcherServlet();
+        MessageDispatcherServlet servlet = new MessageDispatcherServlet(); //handling SOAP requests
         servlet.setApplicationContext(applicationContext);
         servlet.setTransformWsdlLocations(true);
         return new ServletRegistrationBean(servlet, "/ws/*"); //also can change this for your project
     }
 
 
-    @Bean(name = "universities")
+    @Bean(name = "universities") //wsdl name that will be exposed
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema universitiesSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("UniversitiesPort");
