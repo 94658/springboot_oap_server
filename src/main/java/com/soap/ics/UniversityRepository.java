@@ -1,6 +1,7 @@
 package com.soap.ics;
 
-import localhost._7000.universities.University;
+
+import localhost._7050.universities.University;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
